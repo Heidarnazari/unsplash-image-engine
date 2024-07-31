@@ -3,10 +3,10 @@ import image from "./utils/image.js";
 ("use strict");
 
 const searchInput = document.querySelector(`.search-input`);
+const searchBox = document.querySelector(`#search-box`);
 const preloader = document.querySelector(`.preloader`);
 const imagesContainer = document.querySelector(`#images-container`);
 const form = document.querySelector(`#form`);
-const main = document.getElementById(`main`);
 
 // ******** HANDLE EVENT *************
 searchInput.addEventListener(`focusin`, (ev) => {
@@ -28,6 +28,11 @@ function handleSearch(ev) {
   showPictures(keyword, page);
   // detecting bottom
   window.addEventListener(`scroll`, (ev) => {
+    if (window.scrollY > 100) {
+      searchBox.classList.add(`scrolling-search-box`);
+    } else {
+      searchBox.classList.remove(`scrolling-search-box`);
+    }
     if (isAtBottom()) {
       preloader.classList.add(`show-preloader`);
       page++;
@@ -38,7 +43,7 @@ function handleSearch(ev) {
 
 async function showPictures(keyword, page) {
   if (keyword.trim().length !== 0 && page) {
-    const URL = `https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&client_id=******************************&per_page=15`;
+    const URL = `https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&client_id=*******************************************&per_page=15`;
 
     const request = await fetch(URL);
     const response = await request.json();
