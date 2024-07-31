@@ -69,10 +69,11 @@ IMAGE STYLE
   text-decoration: none;
   color: black;
   font-weight: lighter;
+  transition: var(--transition);
 }
 
 .image a:hover {
-  color: red;
+  text-decoration: underline;
 }
 
 .about {
