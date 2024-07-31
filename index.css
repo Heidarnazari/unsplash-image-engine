@@ -1,0 +1,166 @@
+@import "./styles/search-box.css";
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Kaushan+Script&display=swap");
+
+:root {
+  --clr-beige: #f5f5dc;
+  --clr-white: white;
+  --clr-grey: grey;
+  --clr-grey-1: rgb(180, 179, 179);
+  --box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.3);
+  --transition: all 0.2s linear;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+#main {
+  min-height: 100vh;
+  width: 100vw;
+  background: var(--clr-white);
+  padding: 4rem 2rem;
+}
+
+#title {
+  text-align: center;
+  font-family: "Dancing Script", cursive;
+}
+
+#images-container {
+  padding-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 250px;
+  align-items: start;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* 
+============
+IMAGE STYLE
+============
+*/
+
+.image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.image img {
+  border-radius: 0.3rem;
+  width: 100%;
+  height: 65%;
+  object-fit: cover;
+}
+
+.photographer {
+  padding: 0.4rem 0.4rem 0.4rem 0rem;
+}
+
+.image a {
+  text-decoration: none;
+  color: black;
+  font-weight: lighter;
+}
+
+.image a:hover {
+  color: red;
+}
+
+.about {
+  color: var(--clr-grey);
+  overflow: hidden;
+  font-size: 0.8rem;
+}
+
+@media screen and (min-width: 600px) {
+  #images-container {
+    padding: 4rem;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1112px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #images-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #images-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* 
+===============
+END OF IMAGE STYLE
+===============
+*/
+
+/* 
+===============
+preloader
+===============
+*/
+
+.preloader {
+  margin-left: auto;
+  margin-right: auto;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-top: solid 3px var(--clr-grey);
+  border-right: solid 3px var(--clr-grey);
+  border-radius: 50%;
+  animation-name: preloader;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  display: none;
+}
+
+.show-preloader {
+  display: block;
+}
+
+@keyframes preloader {
+  10% {
+    transform: rotate(36deg);
+  }
+  20% {
+    transform: rotate(72);
+  }
+  30% {
+    transform: rotate(108deg);
+  }
+  40% {
+    transform: rotate(144deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  60% {
+    transform: rotate(216deg);
+  }
+  70% {
+    transform: rotate(252deg);
+  }
+  80% {
+    transform: rotate(288deg);
+  }
+  90% {
+    transform: rotate(324deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

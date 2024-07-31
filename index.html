@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image || Search</title>
+
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./styles/fontawesome/css/all.css" />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <main id="main">
+      <h1 id="title">unsplash image search</h1>
+      <div id="search-box">
+        <form id="form">
+          <button type="submit" id="btn">
+            <i class="fa-solid fa-search"></i>
+          </button>
+          <input
+            type="text"
+            class="search-input"
+            name="search-input"
+            placeholder="search here ..."
+          />
+        </form>
+      </div>
+      <div id="images-container"></div>
+      <div class="preloader"></div>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
