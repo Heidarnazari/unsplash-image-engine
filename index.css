@@ -6,7 +6,6 @@
   --clr-white: white;
   --clr-grey: grey;
   --clr-grey-1: rgb(180, 179, 179);
-  --box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.3);
   --transition: all 0.2s linear;
 }
 
@@ -25,6 +24,7 @@
 }
 
 #title {
+  margin-bottom: 1rem;
   text-align: center;
   font-family: "Dancing Script", cursive;
 }

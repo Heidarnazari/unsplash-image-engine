@@ -3,10 +3,13 @@
   --clr-white: white;
   --clr-grey: grey;
   --transition: all 0.2s linear;
+  --box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.3);
 }
 
 #search-box {
-  padding: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
 }
 
 #form {
@@ -53,4 +56,12 @@
 
 .focused-input {
   border-width: 1.3px;
+}
+
+.scrolling-search-box {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  box-shadow: var(--box-shadow);
+  background: var(--clr-white);
 }
